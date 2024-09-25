@@ -29,9 +29,11 @@
 
 .main {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* 세로가 아닌 가로로 배치 */
   gap: 32px;
   grid-row-start: 2;
+  justify-content: space-around; /* 좌우 공간을 나누기 */
+  width: 100%; /* 전체 너비 사용 */
 }
 
 .main ol {
@@ -161,5 +163,92 @@ a.secondary {
 @media (prefers-color-scheme: dark) {
   .logo {
     filter: invert();
+  }
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right {
+  display: flex;
+  justify-content: center;
+}
+.right h1 {
+  font-weight: bold;
+  font-size: 64px;
+  margin: 48px 0;
+}
+.right h2 {
+  font-weight: bold;
+  font-size: 31px;
+  margin-bottom: 32px;
+}
+.right h3 {
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.login {
+  width: 230px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 0 16px;
+  font-size: 15px;
+  background-color: #0a0a0a;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 25px;
+}
+.login:hover {
+  background-color: #1EEA94;
+}
+.signup {
+  width: 230px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 0 16px;
+  font-size: 15px;
+  color: #1a1a1a;
+  border: 1px solid #1EEA94;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.signup:hover {
+  background-color: #1EEA94;
+}
+@media all and (min-width: 1000px) {
+  .container {
+    flex-direction: row;
+    padding: 0;
+  }
+  .left {
+    flex: 1;
+    justify-content: center;
+  }
+  .left img {
+    width: 450px;
+    height: 550px;
+  }
+  .right {
+    justify-content: center;
+  }
+  .right h1 {
+    font-size: 64px;
   }
 }

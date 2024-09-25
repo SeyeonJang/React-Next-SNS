@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import ic_logo from "../../public/ic_logo.png";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -7,44 +9,28 @@ export default function Home() {
       <main className={styles.main}>
         <Image
           className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
+          src={ic_logo}
           alt="Next.js logo"
           width={180}
-          height={38}
+          height={180}
           priority
         />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+        <div>
+          <h1>명함 관리로 이루어지는 내 커리어 관리</h1>
+          <br></br>
+          <h3>명함 자동 등록, 1촌 맺기</h3>
+          <div className={styles.container}>
+            <div className={styles.left}>
+              <Link href="/enter/flow/signup" className={styles.signup}>가입하기</Link>
+            </div>
+            <div className={styles.right}>
+              <Link href="/enter/flow/signup" className={styles.login}>로그인</Link>
+            </div>
+          </div>
         </div>
+
+
       </main>
       <footer className={styles.footer}>
         <a
